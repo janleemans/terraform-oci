@@ -27,6 +27,6 @@
    - kubeconfig version
 
 ## Improvement plans ##
-- include creation of an API user with API key, 
+- include creation of API key, 
 - creation of OKE dedicated compartment
 - add nginx ingress 
