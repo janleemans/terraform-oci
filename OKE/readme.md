@@ -15,9 +15,12 @@
   
 - Add an API (non-SSO) user with an API key:
   - Navigate to the "Identity" , "Users" screen and add a user called "api.user"
-  - Add an API key and a Auth Token, and take care to carefully note down the token, you will need it later.
-  
-  
+  - Add an API key: you need a private/public key pair, and you need to paste the public one into the key field.
+    - If you don't have a key pair available, you can navigate to the "Administration", "My Services" dashboard, select the "Database Classic" Service console to initiate a database creation, and on the 2nd screen you can ask to generate and download a key. Cancel the DB creation once you have downloaded the key.
+  - Copy the fingerprint of your API key in a temporary file
+  - Copy the OCID of this new user in a tempporary file
+    
+  ![](../images/OkeUser.png)
   
 - Terraform needs to be installed on your local machine.  
     - Go to the [Hashicorp Terraform website](https://www.terraform.io/downloads.html) to download the software for your OS
@@ -27,12 +30,34 @@
         - On Windows: go to System Steetings, Advanced, Environment Variables, and add the path to your Terraform directory 
 
 ## Info required to enable the script for your environment: ##
+You need to collect a series of OCID's from your instance in order for Terraform to access your instance:
 - Tenancy OCID
+- Region name
 - Compartiment OCID
 - User OCID
 - API Key fingerprint
 - Private key API local path
-- Region name
+
+
+Screen shots of the various locations to find this information
+
+- Tenancy OCID and Region Name:
+  - Navigate to "Administration", "Tenancy Details"
+  ![](../images/OkeTenancy.png)
+  
+- Compartment OCID
+  - Navigate to "Identity", "Compartments"
+  - Select the compartment where you want to create the cluser (for example "Demo")
+  ![](../images/OkeCompart.png)
+  
+- User OCID and API Key Fingerprint
+  - Navigate to "Identity", "Users"
+  - Select the user you created
+  ![](../images/OkeUser.png)
+  
+- Private Key API Path
+  - This is the local path on your laptop where the private key file is located
+
 
 ## Steps to execute ##
 
