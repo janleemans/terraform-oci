@@ -2,13 +2,23 @@
 
 ## Prerequisites: ##
 
-- You need to have an OCI account that has the OKE service available.  To validate this, navigate to the OCI console, and select the menu item "Developer Services, "Containr Clusters". 
-- Add a policy statement on the level of the root compartment with following text: 
-  - "allow service OKE to manage all-resources in tenancy"
+- You need to have an OCI account that has the OKE service available.  To validate this, navigate to the OCI console, and select the menu item "Developer Services, "Container Clusters". 
+
+  ![](../images/OkeConsole.png)
+  
+- Add a policy statement on the level of the root compartment
+  - Navigate to the "Identity" , "Policies" screen and hit the "Create Policy" button
+  - Choose a name for the policy, and define it with the below text:
+    - "allow service OKE to manage all-resources in tenancy"
   
   ![](../images/OkePolicy.png)
   
-- Add anan API (non-SSO) user with an API key
+- Add an API (non-SSO) user with an API key:
+  - Navigate to the "Identity" , "Users" screen and add a user called "api.user"
+  - Add an API key and a Auth Token, and take care to carefully note down the token, you will need it later.
+  
+  
+  
 - Terraform needs to be installed on your local machine.  
     - Go to the [Hashicorp Terraform website](https://www.terraform.io/downloads.html) to download the software for your OS
     - unzip the executable file in the directory of your choice
