@@ -69,6 +69,7 @@ Screen shots of the various locations to find this information
 - validate the resulting K8S infrastructure :
    - export KUBECONFIG=./mykubeconfig
    - kubeconfig version
+   - kubeconfig show nodes
 
 ## Improvement plans ##
 - creation of OKE dedicated compartment
