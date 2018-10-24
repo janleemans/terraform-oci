@@ -2,10 +2,19 @@
 
 ## Prerequisites: ##
 
-- Installed terraform on your local machine
-- OCI account with OKE available
-- a policy statement "allow service OKE to manage all-resources in tenancy" on the level of the root compartment
-- an API (non-SSO) user with an API key
+- You need to have an OCI account that has the OKE service available.  To validate this, navigate to the OCI console, and select the menu item "Developer Services, "Containr Clusters". 
+- Add a policy statement on the level of the root compartment with following text: 
+  - "allow service OKE to manage all-resources in tenancy"
+  
+  ![](../images/OkePolicy.png)
+  
+- Add anan API (non-SSO) user with an API key
+- Terraform needs to be installed on your local machine.  
+    - Go to the [Hashicorp Terraform website](https://www.terraform.io/downloads.html) to download the software for your OS
+    - unzip the executable file in the directory of your choice
+    - Add the terraform command to your path
+        - On Mac: export PATH=$PATH:`pwd`
+        - On Windows: go to System Steetings, Advanced, Environment Variables, and add the path to your Terraform directory 
 
 ## Info required to enable the script for your environment: ##
 - Tenancy OCID
