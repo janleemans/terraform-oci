@@ -29,3 +29,15 @@ resource "oci_containerengine_node_pool" "K8S_pool1" {
 	quantity_per_subnet = "1"
 #	ssh_public_key = "${var.node_pool_ssh_public_key}"
 }
+
+
+data "oci_containerengine_cluster_kube_config" "test_cluster_kube_config" {
+	#Required
+	cluster_id = "${oci_containerengine_cluster.k8s_cluster.id}"
+}
+
+
+resource "local_file" "mykubeconfig" {
+    content     = "${data.oci_containerengine_cluster_kube_config.test_cluster_kube_config.content}"
+    filename = "./mykubeconfig"
+}

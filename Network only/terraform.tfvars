@@ -6,5 +6,3 @@ fingerprint = "d3:e8:your_fingerprint"
 private_key_path = "/Users/your_name/.oci/oci_api_key.pem"
 user_ocid = "ocid1.user.oc1..your_ocid"
 region = "us-ashburn-1"
-
-k8sWorkerShape = "VM.Standard2.1"

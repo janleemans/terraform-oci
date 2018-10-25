@@ -92,8 +92,19 @@ variable "additional_nat_security_lists_ids" {
   default = []
 }
 
+# Instance shape, e.g. VM.Standard1.1, VM.Standard1.2, VM.Standard1.4, ..., BM.Standard1.36, ...
 
-variable "k8sWorkerShape" {}
+variable "etcdShape" {
+  default = "VM.Standard1.1"
+}
+
+variable "k8sMasterShape" {
+  default = "VM.Standard1.1"
+}
+
+variable "k8sWorkerShape" {
+  default = "VM.Standard1.2"
+}
 
 variable "k8sWorkerAd1Count" {
   default = 1
