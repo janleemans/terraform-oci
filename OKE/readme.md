@@ -69,10 +69,11 @@ Screen shots of the various locations to find this information
 - validate the resulting K8S infrastructure :
    - export KUBECONFIG=./mykubeconfig
    - kubectl version
-   - kubectl show nodes
+   - kubectl get nodes
+   
    To access the Kubernetes console:
    - kubectl proxy
-   Then navigate to   
+   - Then navigate to   
    http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login
    
 
