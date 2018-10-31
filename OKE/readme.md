@@ -15,7 +15,7 @@
 
 - Add an API (non-SSO) user with an API key:
   - Navigate to the "Identity" , "Users" screen and add a user called "api.user"
-  - Add an API key: you need a private/public key pair, and you need to paste the public one into the key field.
+  - Add an API key: you need a private/public key pair, and you need to paste the public one into the key field. 
 
     - On a Mac : open a console window and execute following commands
 
