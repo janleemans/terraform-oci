@@ -78,8 +78,14 @@ Screen shots of the various locations to find this information
 - run terraform apply to spin up your infrastructure
 - validate the resulting K8S infrastructure :
    - export KUBECONFIG=./mykubeconfig
-   - kubeconfig version
-   - kubeconfig show nodes
+   - kubectl version
+   - kubectl get nodes
+   
+   To access the Kubernetes console:
+   - kubectl proxy
+   - Then navigate to   
+   http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login
+   
 
 ## Improvement plans ##
 - creation of OKE dedicated compartment
