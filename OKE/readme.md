@@ -5,23 +5,33 @@
 - You need to have an OCI account that has the OKE service available.  To validate this, navigate to the OCI console, and select the menu item "Developer Services, "Container Clusters". 
 
   ![](../images/OkeConsole.png)
-  
+
 - Add a policy statement on the level of the root compartment
   - Navigate to the "Identity" , "Policies" screen and hit the "Create Policy" button
   - Choose a name for the policy, and define it with the below text:
     - "allow service OKE to manage all-resources in tenancy"
-  
+
   ![](../images/OkePolicy.png)
-  
+
 - Add an API (non-SSO) user with an API key:
   - Navigate to the "Identity" , "Users" screen and add a user called "api.user"
   - Add an API key: you need a private/public key pair, and you need to paste the public one into the key field.
-    - If you don't have a key pair available, you can navigate to the "Administration", "My Services" dashboard, select the "Database Classic" Service console to initiate a database creation, and on the 2nd screen you can ask to generate and download a key. Cancel the DB creation once you have downloaded the key.
+
+    - On a Mac : open a console window and execute following commands
+
+    - ```
+      mkdir ./mykey
+      openssl genrsa -out ./mykey/api_key.pem 2048
+      openssl rsa -pubout -in ./mykey/api_key.pem -out ./mykey/api_key_public.pem
+      ```
+
+    - On a Windows PC, you can use [puttygen](https://www.ssh.com/ssh/putty/download).exe to create a key.
   - Copy the fingerprint of your API key in a temporary file
   - Copy the OCID of this new user in a tempporary file
-    
+
+
   ![](../images/OkeUser.png)
-  
+
 - Terraform needs to be installed on your local machine.  
     - Go to the [Hashicorp Terraform website](https://www.terraform.io/downloads.html) to download the software for your OS
     - unzip the executable file in the directory of your choice
