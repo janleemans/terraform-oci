@@ -95,7 +95,15 @@ Screen shots of the various locations to find this information
 
 ## Steps to execute ##
 
-- Clone this git repository locally on your machine
+- Clone this git repository locally on your machine, using this URL
+
+   - https://github.com/janleemans/terraform-oci.git
+
+   If you use the command line, execute following command:
+
+   ​	`git clone https://github.com/janleemans/terraform-oci.git`
+
+- Go to the `terraform-oci/OKE` directory
 
 - Edit the file terraform.tfvars and enter your instance OCID's on the first lines, using the information collected in the previous section
 
@@ -127,7 +135,7 @@ Screen shots of the various locations to find this information
 
 - In case you do not have kubectl installed on your machine, follow these steps:
 
-   - [Instructions to Install kubectl](kubectl_install.md)
+   - [Instructions to Install kubectl](https://github.com/CloudTestDrive/EventLabs/blob/master/AppDev/K8S/kubectl_install.md)
 
 - validate the resulting K8S infrastructure :
 
