@@ -57,7 +57,39 @@ resource "oci_core_security_list" "WorkerSecList" {
        }
    },
    { protocol = "6"
+     source   = "134.70.0.0/17"
+     stateless = false
+     tcp_options {
+       "max" = 22
+       "min" = 22
+       }
+   },
+   { protocol = "6"
      source   = "138.1.0.0/17"
+     stateless = false
+     tcp_options {
+       "max" = 22
+       "min" = 22
+       }
+   },
+   { protocol = "6"
+     source   = "140.91.0.0/17"
+     stateless = false
+     tcp_options {
+       "max" = 22
+       "min" = 22
+       }
+   },
+   { protocol = "6"
+     source   = "147.154.0.0/16"
+     stateless = false
+     tcp_options {
+       "max" = 22
+       "min" = 22
+       }
+   },
+   { protocol = "6"
+     source   = "192.29.0.0/16"
      stateless = false
      tcp_options {
        "max" = 22
