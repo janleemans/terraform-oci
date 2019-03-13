@@ -65,7 +65,7 @@ resource "oci_core_security_list" "WorkerSecList" {
        }
    },
    { protocol = "6"
-     source   = "138.1.0.0/17"
+     source   = "138.1.0.0/16"
      stateless = false
      tcp_options {
        "max" = 22
