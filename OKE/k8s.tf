@@ -1,7 +1,7 @@
 
 resource "oci_containerengine_cluster" "k8s_cluster" {
 	compartment_id = "${var.compartment_ocid}"
-	kubernetes_version = "v1.11.5"
+	kubernetes_version = "v1.11.9"
 	name = "k8s_cluster"
 	vcn_id = "${oci_core_virtual_network.K8SVNC.id}"
 
@@ -20,7 +20,7 @@ resource "oci_containerengine_node_pool" "K8S_pool1" {
 	#Required
 	cluster_id = "${oci_containerengine_cluster.k8s_cluster.id}"
 	compartment_id = "${var.compartment_ocid}"
-  kubernetes_version = "v1.11.5"
+  kubernetes_version = "v1.11.9"
 	name = "K8S_pool1"
 	node_image_name = "${var.worker_ol_image_name}"
 	node_shape = "${var.k8sWorkerShape}"
